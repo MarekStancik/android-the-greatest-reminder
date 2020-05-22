@@ -6,9 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="5dp"
+    android:background="@color/colorSurface"
     tools:context=".DetailActivity">
 
     <ScrollView
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
@@ -19,50 +21,120 @@
             android:orientation="vertical">
 
             <!-- Component for reminder name -->
-            <TextView
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:startIconDrawable="@drawable/ic_add_alarm_24px"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/txtName"/>
+                android:layout_margin="4dp"
+                android:hint="Name">
 
-            <EditText
-                android:id="@+id/etReminderName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etReminderName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/txtName" />
+
+                        <EditText
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" /> -->
 
             <!-- Component for reminder detail -->
-            <TextView
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:startIconDrawable="@drawable/ic_add_alarm_24px"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/txtDetail"/>
+                android:layout_margin="4dp"
+                android:hint="Detail">
 
-            <EditText
-                android:id="@+id/etReminderDetail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                <com.google.android.material.textfield.TextInputEditText
 
-            <!-- Component for remminder date trigger -->
-            <TextView
+                    android:id="@+id/etReminderDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <!--  <TextView
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:text="@string/txtDetail" />
+
+                         <EditText
+                             android:id="@+id/etReminderDetail"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content" />
+ -->
+
+
+             <!-- Component for remminder date trigger -->
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:startIconDrawable="@drawable/ic_add_alarm_24px"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/txtTriggerDate"/>
+                android:layout_margin="4dp"
+                android:hint="TriggerDate">
 
-            <EditText
-                android:id="@+id/etReminderDate"
-                android:focusable="false"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etReminderDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Component for reminder time trigger -->
-            <TextView
+                        <!-- <TextView
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:text="@string/txtTriggerDate" />
+
+                         <EditText
+                             android:id="@+id/etReminderDate"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:focusable="false" /> -->
+
+             <!-- Component for reminder time trigger -->
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:startIconDrawable="@drawable/ic_add_alarm_24px"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/txtReminderTime"/>
+                android:layout_margin="4dp"
+                android:hint="Trigger Time">
 
-            <EditText
-                android:id="@+id/etReminderTime"
-                android:focusable="false"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etReminderTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+                        <!--<TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/txtReminderTime" />
+
+                        <EditText
+                            android:id="@+id/etReminderTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false" /> -->
 
             <!-- Component for action -->
             <!--
@@ -100,45 +172,57 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/txtNotifications"/>
+                    android:text="@string/txtNotifications" />
 
                 <ListView
                     android:id="@+id/lvDetailNotifications"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/btnAddNotification"
+                    app:icon="@drawable/ic_add_alarm_24px"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                    android:textColor="@color/colorAccent"
-                    android:text="@string/txtAddNotification"/>
+
+                    android:text="@string/txtAddNotification"
+                    android:textAppearance="?attr/textAppearanceButton"
+
+
+                    />
             </LinearLayout>
 
             <Button
                 android:id="@+id/btnAddImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/txtAddImage"/>
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp"
+
+                android:text="@string/txtAddImage"
+                app:icon="@drawable/ic_add_a_photo_black_24dp"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+
 
             <ImageView
                 android:id="@+id/imgDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="invisible"/>
+                android:visibility="invisible" />
 
         </LinearLayout>
 
     </ScrollView>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSaveDetail"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:textColor="@color/colorPrimary"
-        android:text="@string/txtSave"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/txtSave"
+         />
 
 </LinearLayout>

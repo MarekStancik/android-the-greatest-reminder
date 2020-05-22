@@ -3,6 +3,7 @@
     android:baselineAligned="false"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorSurface"
     android:orientation="horizontal">
 
     <!--Linear layout that holds name and detail text vertically-->
