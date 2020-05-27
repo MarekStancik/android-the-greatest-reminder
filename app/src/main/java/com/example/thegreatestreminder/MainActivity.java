@@ -3,6 +3,7 @@ package com.example.thegreatestreminder;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -120,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.setTitle("The Greatest Reminder");
-
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         this.reminderService = DependencyFactory.getInstance(this).getReminderService();
         this.setUpReferences();
         this.setUpListView();
