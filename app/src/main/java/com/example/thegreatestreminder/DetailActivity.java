@@ -24,7 +24,6 @@ import com.example.thegreatestreminder.BusinessLogic.ReminderService;
 import com.example.thegreatestreminder.Utils.Adapters.NotificationArrayAdapter;
 import com.example.thegreatestreminder.Utils.Converters.DateTimeConverter;
 import com.example.thegreatestreminder.Utils.Helpers.ControlsHelper;
-import com.google.android.material.textfield.TextInputLayout;
 
 import java.sql.Time;
 import java.text.ParseException;
@@ -36,10 +35,10 @@ public class DetailActivity extends AppCompatActivity {
 
     final static int CAMERA_REQUEST = 1;
 
-    TextInputLayout etName;
-    TextInputLayout etDetail;
-    TextInputLayout etDate;
-    TextInputLayout etTime;
+    EditText etName;
+    EditText etDetail;
+    EditText etDate;
+    EditText etTime;
 
     ImageView img;
 
@@ -77,9 +76,9 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private Reminder getReminder() throws ParseException {
-        String name = this.etName.toString();
-        String detail = this.etDetail.toString();
-        Date triggerDate = DateTimeConverter.dateTimeFromString(this.etDate.toString(),this.etTime.toString());
+        String name = this.etName.getText().toString();
+        String detail = this.etDetail.getText().toString();
+        Date triggerDate = DateTimeConverter.dateTimeFromString(this.etDate.getText().toString(),this.etTime.getText().toString());
         Reminder reminder = new Reminder(name,detail,triggerDate);
 
         for (Notification n :
@@ -167,10 +166,11 @@ public class DetailActivity extends AppCompatActivity {
             long id = getEditedId();
 
             Reminder reminder = reminderService.getReminder(id);
-            etName.setHint(reminder.getName());
-            etDetail.setHint(reminder.getDetail());
-            etDate.setHint(DateTimeConverter.dateToString(reminder.getTriggerDateTime()));
-            etTime.setHint(DateTimeConverter.timeToString(new Time(reminder.getTriggerDateTime().getTime())));
+
+            etName.setText(reminder.getName());
+            etDetail.setText(reminder.getDetail());
+            etDate.setText(DateTimeConverter.dateToString(reminder.getTriggerDateTime()));
+            etTime.setText(DateTimeConverter.timeToString(new Time(reminder.getTriggerDateTime().getTime())));
 
             Bitmap image = reminder.getPhoto();
             if(image != null){
@@ -187,8 +187,8 @@ public class DetailActivity extends AppCompatActivity {
         }
         else{
             Date currentDate = new Date();
-            etDate.setHint(DateTimeConverter.dateToString(currentDate));
-            etTime.setHint(DateTimeConverter.timeToString(new Time(currentDate.getTime())));
+            etDate.setText(DateTimeConverter.dateToString(currentDate));
+            etTime.setText(DateTimeConverter.timeToString(new Time(currentDate.getTime())));
         }
     }
 
