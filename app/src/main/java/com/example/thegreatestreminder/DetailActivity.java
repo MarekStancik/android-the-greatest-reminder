@@ -61,6 +61,8 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void setupControlsReferences(){
+
+
         etName = findViewById(R.id.etReminderName);
         etDetail = findViewById(R.id.etReminderDetail);
         etDate = findViewById(R.id.etReminderDate);
