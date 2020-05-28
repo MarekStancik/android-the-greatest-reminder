@@ -30,7 +30,7 @@ class ReminderAlarmService {
         PendingIntent alarmIntent = createIntent(reminder.getId(),0);
 
         Date triggerDate = reminder.getTriggerDateTime();
-        alarmManager.set(AlarmManager.RTC_WAKEUP, /*triggerDate.getTime()*/ System.currentTimeMillis() + 5000L,alarmIntent);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, triggerDate.getTime(),alarmIntent);
     }
 
     public void deleteReminder(long reminderId){
